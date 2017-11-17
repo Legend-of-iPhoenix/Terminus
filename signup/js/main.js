@@ -4,6 +4,7 @@ function toggleSignIn() {
       } else {
         var email = document.getElementById('email').value;
         var password = document.getElementById('password').value;
+        var username = document.getElementById('username').value;
         if (email.length < 4) {
           alert('Please enter an email address.');
           return;
@@ -12,7 +13,7 @@ function toggleSignIn() {
           alert('Please enter a password.');
           return;
         }
-        if (username.length < 2 || username.length > 64 || username == "_iPhoenix_" || username == "Console" || username = "UniBot")
+        if (username.length < 2 || username.length > 64 || username == "_iPhoenix_" || username == "Console" || username == "UniBot")
         {
           alert('Please enter a valid username');
           return;
