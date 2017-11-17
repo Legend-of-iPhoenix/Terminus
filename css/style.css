@@ -62,12 +62,13 @@ input[type=text] {
     background-color: #000;
     box-sizing: border-box;
     border: none;
-    border-right:1px solid green;
+    height:19px;
+    border-right:13px solid #49FF41;
     -webkit-transition: 0.5s;
     transition: 0.5s;
     outline: none;
     overflow: auto;
-    font-size: small;
+    font-size: 15px;
     text-shadow: 0 0 0 #49FF41;
     color: transparent;
 }
