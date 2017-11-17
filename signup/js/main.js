@@ -4,18 +4,12 @@ function toggleSignIn() {
       } else {
         var email = document.getElementById('email').value;
         var password = document.getElementById('password').value;
-        var username = document.getElementById('username').value;
         if (email.length < 4) {
           alert('Please enter an email address.');
           return;
         }
         if (password.length < 4) {
           alert('Please enter a password.');
-          return;
-        }
-        if (username.length < 2 || username.length > 64 || username == "_iPhoenix_" || username == "Console" || username == "UniBot")
-        {
-          alert('Please enter a valid username');
           return;
         }
         firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
@@ -34,6 +28,7 @@ function toggleSignIn() {
     }
 
     function handleSignUp() {
+      var username = document.getElementById('username').value;
       var email = document.getElementById('email').value;
       var password = document.getElementById('password').value;
       if (email.length < 4) {
@@ -44,7 +39,13 @@ function toggleSignIn() {
         alert('Please enter a password.');
         return;
       }
-      firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+          
+        if (username.length < 2 || username.length > 64 || username == "_iPhoenix_" || username == "Console" || username == "UniBot")
+        {
+          alert('Please enter a valid username');
+          return;
+        }
+      var user = firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
         var errorCode = error.code;
         var errorMessage = error.message;
         if (errorCode == 'auth/weak-password') {
@@ -54,6 +55,12 @@ function toggleSignIn() {
         }
         console.log(error);
       });
+      if (user)
+      {
+        user.updateProfile({
+         displayName: username
+        });
+      }
     }
 
     function sendEmailVerification() {
