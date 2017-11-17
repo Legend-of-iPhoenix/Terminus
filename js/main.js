@@ -138,10 +138,7 @@ function submitMessage() {
     }
     else
     {
-      messageBox.style.border = "3px solid #f00";
-      window.setTimeout(function() {
-        messageBox.style.border = "3px solid #ccc";
-      }, 1000);
+      
     }
   }
 }
@@ -152,6 +149,10 @@ document.getElementById("message").addEventListener("keyup", function(event) {
     if (isSignedIn) {
       submitMessage();
     }
+  }
+  else
+  {
+    document.getElementById("message").style.width = 8 * document.getElementById("message").value.length + "px";
   }
 });
 
