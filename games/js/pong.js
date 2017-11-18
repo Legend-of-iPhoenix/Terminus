@@ -24,7 +24,7 @@ function initGame() {
       if (i == 2 || i == output.rows-2)
         screen[i][j] = "=";
       if (((i + 4 >= (output.rows / 2)) && (i - 4 <= (output.rows / 2)) && ((j == 3) || (j == output.cols-3)))
-        screen[i][j] = "|";
+        screen[i][j] = "1";
       if ((i == Math.floor(output.rows/2)) && (j == Math.floor(output.cols/2)))
         screen[i][j] = "@";
     }
