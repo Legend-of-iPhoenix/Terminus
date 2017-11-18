@@ -21,10 +21,10 @@ function initGame() {
   for (var i = 0; i < output.rows; i++) {
     for (var j = 0; j < output.cols; j++) {
       screen[i][j] = " ";
-      if (i == 2 || i == output.rows-2))
+      if (i == 2 || i == output.rows-2)
         screen[i][j] = "=";
       if (((i + 4 >= (output.rows / 2)) && (i - 4 <= (output.rows / 2)) && ((j == 3) || (j == output.cols-3)))
-        screen[i][j] = "#";
+        screen[i][j] = "|";
       if ((i == Math.floor(output.rows/2)) && (j == Math.floor(output.cols/2)))
         screen[i][j] = "@";
     }
